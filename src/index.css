@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 95%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 215 20% 93%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 215 20% 91%;
+    --input: 215 20% 91%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 12% 50%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 96%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 215 20% 93%;
+    --sidebar-ring: 160 84% 39%;
+
+    --chart-1: 160 84% 39%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 68% 60%;
+    --chart-5: 350 80% 60%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 30%));
+    --shadow-sm: 0 1px 2px 0 hsl(220 20% 10% / 0.03);
+    --shadow-card: 0 1px 3px 0 hsl(220 20% 10% / 0.04), 0 1px 2px -1px hsl(220 20% 10% / 0.04);
+    --shadow-elevated: 0 4px 6px -1px hsl(220 20% 10% / 0.05), 0 2px 4px -2px hsl(220 20% 10% / 0.05);
+  }
+
+  .dark {
+    --background: 222 22% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 222 22% 11%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 222 22% 11%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 18% 16%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 222 18% 16%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 222 18% 18%;
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 222 18% 18%;
+    --input: 222 18% 18%;
+    --ring: 160 84% 39%;
+
+    --sidebar-background: 222 22% 10%;
+    --sidebar-foreground: 215 12% 55%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 18% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 222 18% 16%;
+    --sidebar-ring: 160 84% 39%;
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.2), 0 1px 2px -1px hsl(0 0% 0% / 0.15);
+    --shadow-elevated: 0 4px 6px -1px hsl(0 0% 0% / 0.25), 0 2px 4px -2px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card border border-border rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-elevated {
+    @apply bg-card border border-border rounded-xl;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .kpi-gradient-1 {
+    background: linear-gradient(135deg, hsl(160 84% 39% / 0.1), hsl(160 84% 39% / 0.05));
+  }
+  .kpi-gradient-2 {
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(217 91% 60% / 0.05));
+  }
+  .kpi-gradient-3 {
+    background: linear-gradient(135deg, hsl(38 92% 50% / 0.1), hsl(38 92% 50% / 0.05));
+  }
+  .kpi-gradient-4 {
+    background: linear-gradient(135deg, hsl(280 68% 60% / 0.1), hsl(280 68% 60% / 0.05));
+  }
+}
